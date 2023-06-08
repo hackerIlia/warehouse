@@ -1,0 +1,637 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props" Condition="Exists('packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5392286C-25A6-439D-BFCB-82A7717981BA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>abracadabra</RootNamespace>
+    <AssemblyName>abracadabra</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AnalysisServices.AppLocal, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.AnalysisServices.AppLocal.Tabular, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.337.80\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.337.80\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.337.80\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.337.80\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.337.80\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.160.1000.6\lib\net462\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox2.Designer.cs">
+      <DependentUpon>AboutBox2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administration.Designer.cs">
+      <DependentUpon>Administration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Authorization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Authorization.Designer.cs">
+      <DependentUpon>Authorization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="chek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="chek.Designer.cs">
+      <DependentUpon>chek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="chek_zacazchik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="chek_zacazchik.Designer.cs">
+      <DependentUpon>chek_zacazchik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConnectionStringClass.cs" />
+    <Compile Include="EditChek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditChek.Designer.cs">
+      <DependentUpon>EditChek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditChekZacazchik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditChekZacazchik.Designer.cs">
+      <DependentUpon>EditChekZacazchik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditInfoUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditInfoUsers.Designer.cs">
+      <DependentUpon>EditInfoUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditJurnal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditJurnal.Designer.cs">
+      <DependentUpon>EditJurnal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditNakladnaia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditNakladnaia.Designer.cs">
+      <DependentUpon>EditNakladnaia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditNaklPostavshik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditNaklPostavshik.Designer.cs">
+      <DependentUpon>EditNaklPostavshik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditPostavshik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditPostavshik.Designer.cs">
+      <DependentUpon>EditPostavshik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditTipTovara.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditTipTovara.Designer.cs">
+      <DependentUpon>EditTipTovara.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditTovar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditTovar.Designer.cs">
+      <DependentUpon>EditTovar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditUsers.Designer.cs">
+      <DependentUpon>EditUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditZakazchik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditZakazchik.Designer.cs">
+      <DependentUpon>EditZakazchik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.Designer.cs">
+      <DependentUpon>ForgotPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InputCodEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputCodEmail.Designer.cs">
+      <DependentUpon>InputCodEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="jurnal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="jurnal.Designer.cs">
+      <DependentUpon>jurnal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nakladnaia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nakladnaia.Designer.cs">
+      <DependentUpon>nakladnaia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nakladnaia_postavshik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nakladnaia_postavshik.Designer.cs">
+      <DependentUpon>nakladnaia_postavshik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewPassword.Designer.cs">
+      <DependentUpon>NewPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewPostavshik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewPostavshik.Designer.cs">
+      <DependentUpon>NewPostavshik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ovar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ovar.Designer.cs">
+      <DependentUpon>ovar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportChek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportChek.Designer.cs">
+      <DependentUpon>ReportChek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportJurnal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportJurnal.Designer.cs">
+      <DependentUpon>ReportJurnal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportNakladnaia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportNakladnaia.Designer.cs">
+      <DependentUpon>ReportNakladnaia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPostavshik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportPostavshik.Designer.cs">
+      <DependentUpon>ReportPostavshik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportTovar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportTovar.Designer.cs">
+      <DependentUpon>ReportTovar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowChek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowChek.Designer.cs">
+      <DependentUpon>ShowChek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowChekZakazchik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowChekZakazchik.Designer.cs">
+      <DependentUpon>ShowChekZakazchik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowJurnal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowJurnal.Designer.cs">
+      <DependentUpon>ShowJurnal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowNakladnaia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowNakladnaia.Designer.cs">
+      <DependentUpon>ShowNakladnaia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowNaklPostavshik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowNaklPostavshik.Designer.cs">
+      <DependentUpon>ShowNaklPostavshik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowPostavshik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowPostavshik.Designer.cs">
+      <DependentUpon>ShowPostavshik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowTipTovara.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowTipTovara.Designer.cs">
+      <DependentUpon>ShowTipTovara.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowTovar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowTovar.Designer.cs">
+      <DependentUpon>ShowTovar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowZakazchik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowZakazchik.Designer.cs">
+      <DependentUpon>ShowZakazchik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tip_tovara.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tip_tovara.Designer.cs">
+      <DependentUpon>tip_tovara.cs</DependentUpon>
+    </Compile>
+    <Compile Include="warehouseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>warehouseDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="warehouseDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>warehouseDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="warehouseDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>warehouseDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="warehouseDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>warehouseDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="warehouseDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>warehouseDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="warehouseDataSetPostavshik.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>warehouseDataSetPostavshik.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="zakazchik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="zakazchik.Designer.cs">
+      <DependentUpon>zakazchik.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AboutBox2.resx">
+      <DependentUpon>AboutBox2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administration.resx">
+      <DependentUpon>Administration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Authorization.resx">
+      <DependentUpon>Authorization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="chek.resx">
+      <DependentUpon>chek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="chek_zacazchik.resx">
+      <DependentUpon>chek_zacazchik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditChek.resx">
+      <DependentUpon>EditChek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditChekZacazchik.resx">
+      <DependentUpon>EditChekZacazchik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditInfoUsers.resx">
+      <DependentUpon>EditInfoUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditJurnal.resx">
+      <DependentUpon>EditJurnal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditNakladnaia.resx">
+      <DependentUpon>EditNakladnaia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditNaklPostavshik.resx">
+      <DependentUpon>EditNaklPostavshik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditPostavshik.resx">
+      <DependentUpon>EditPostavshik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditTipTovara.resx">
+      <DependentUpon>EditTipTovara.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditTovar.resx">
+      <DependentUpon>EditTovar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditUsers.resx">
+      <DependentUpon>EditUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditZakazchik.resx">
+      <DependentUpon>EditZakazchik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForgotPassword.resx">
+      <DependentUpon>ForgotPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputCodEmail.resx">
+      <DependentUpon>InputCodEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jurnal.resx">
+      <DependentUpon>jurnal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nakladnaia.resx">
+      <DependentUpon>nakladnaia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nakladnaia_postavshik.resx">
+      <DependentUpon>nakladnaia_postavshik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewPassword.resx">
+      <DependentUpon>NewPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewPostavshik.resx">
+      <DependentUpon>NewPostavshik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ovar.resx">
+      <DependentUpon>ovar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Report3.rdlc" />
+    <EmbeddedResource Include="Report4.rdlc" />
+    <EmbeddedResource Include="Report5.rdlc" />
+    <EmbeddedResource Include="Report6.rdlc" />
+    <EmbeddedResource Include="ReportChek.resx">
+      <DependentUpon>ReportChek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportJurnal.resx">
+      <DependentUpon>ReportJurnal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportNakladnaia.resx">
+      <DependentUpon>ReportNakladnaia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportPostavshik.resx">
+      <DependentUpon>ReportPostavshik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportTovar.resx">
+      <DependentUpon>ReportTovar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowChek.resx">
+      <DependentUpon>ShowChek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowChekZakazchik.resx">
+      <DependentUpon>ShowChekZakazchik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowJurnal.resx">
+      <DependentUpon>ShowJurnal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowNakladnaia.resx">
+      <DependentUpon>ShowNakladnaia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowNaklPostavshik.resx">
+      <DependentUpon>ShowNaklPostavshik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowPostavshik.resx">
+      <DependentUpon>ShowPostavshik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowTipTovara.resx">
+      <DependentUpon>ShowTipTovara.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowTovar.resx">
+      <DependentUpon>ShowTovar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowZakazchik.resx">
+      <DependentUpon>ShowZakazchik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tip_tovara.resx">
+      <DependentUpon>tip_tovara.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="zakazchik.resx">
+      <DependentUpon>zakazchik.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="warehouseDataSet.xsc">
+      <DependentUpon>warehouseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="warehouseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>warehouseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="warehouseDataSet.xss">
+      <DependentUpon>warehouseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="warehouseDataSet1.xsc">
+      <DependentUpon>warehouseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="warehouseDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>warehouseDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="warehouseDataSet1.xss">
+      <DependentUpon>warehouseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="warehouseDataSet2.xsc">
+      <DependentUpon>warehouseDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="warehouseDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>warehouseDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="warehouseDataSet2.xss">
+      <DependentUpon>warehouseDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="warehouseDataSet3.xsc">
+      <DependentUpon>warehouseDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="warehouseDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>warehouseDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="warehouseDataSet3.xss">
+      <DependentUpon>warehouseDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="warehouseDataSet4.xsc">
+      <DependentUpon>warehouseDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="warehouseDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>warehouseDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="warehouseDataSet4.xss">
+      <DependentUpon>warehouseDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="warehouseDataSetPostavshik.xsc">
+      <DependentUpon>warehouseDataSetPostavshik.xsd</DependentUpon>
+    </None>
+    <None Include="warehouseDataSetPostavshik.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>warehouseDataSetPostavshik.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="warehouseDataSetPostavshik.xss">
+      <DependentUpon>warehouseDataSetPostavshik.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1534516962_2_mini2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\truck-side-view_icon-icons.com_70347.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipboard-check-black-symbol_icon-icons.com_54571.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3709736-customer-listen-paraphrase-service-understand_108091.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magazine_3724.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invoice_document_bill_delivery_note_icon_225116.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delivery_courier_man_people_avatar_shipping_icon_225134.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\productapplication_producto_3010.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\product_delivery_icon_152013.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\order_confirmation_icon_181878.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\seo-social-web-network-internet_232_icon-icons.com_61542.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4105943-accounts-group-people-user-user-group-users_113923.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4105943-accounts-group-people-user-user-group-users_113923 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin_lock_padlock_icon_205893.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\information_info_15651.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props'))" />
+  </Target>
+</Project>
